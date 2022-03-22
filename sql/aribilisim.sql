@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 21 Mar 2022, 16:51:51
--- Sunucu sürümü: 5.7.31
--- PHP Sürümü: 7.3.21
+-- Üretim Zamanı: 22 Mar 2022, 16:56:38
+-- Sunucu sürümü: 5.7.21
+-- PHP Sürümü: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `kategoriler` (
   `ustkat` varchar(30) NOT NULL,
   `meta` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `kategoriler`
