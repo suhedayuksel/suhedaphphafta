@@ -93,7 +93,7 @@
                                     <td><?php echo $satir_katlist['katturu'];?></td>
                                     <td><?php echo $satir_katlist['ustkat'];?></td>
                                     <th><button class="btn btn-dark">Düzenle</button></th>
-                                    <th><a href="kategorisil.php?id=<?php echo $satir_katlist['id'];?>"><button class="btn btn-dark">Sil</button></a></th>
+                                    <th><a href="kategorisil.php?id=<?php echo $satir_katlist['id']; ?>"><button class="btn btn-dark">Sil</button></a></th>
                                 </tr>
                         <?php
                             }
