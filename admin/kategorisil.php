@@ -13,8 +13,12 @@ if($sorgu_katsil -> rowCount()){
 }else{
     echo'silme işlemi gerçekleşemedi';
 }
-
+/* Ben Şüheda Yüksel. PHP Benim İçin Çok Basit. */
 
 ?>
+
+
+
+
 
 
