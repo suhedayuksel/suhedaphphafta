@@ -15,6 +15,9 @@
                 </div>
                 <div class="form-group">
                     <textarea name="icerik" rows="7" class="form-control" placeholder="Yazı İçeriğini Girin"></textarea>
+                    <script>
+                        CKEDITOR.replace( 'icerik' );
+                </script>
                 </div>
                 <div class="form-group">
                     <input type="text" name="meta" class="form-control" placeholder="Meta Açıklaması Girin (Max. 160 Karakter)">
@@ -90,6 +93,7 @@ if($_POST){
     </div>
 </section>
 <!-- Yazı Ekle Section End -->
+
 
 <?php require_once('footer.php'); ?>
 
