@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 28 Mar 2022, 18:29:19
+-- Üretim Zamanı: 30 Mar 2022, 18:46:23
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.3.21
 
@@ -73,6 +73,34 @@ INSERT INTO `ornek` (`id`, `ad`, `yas`, `il`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tablo için tablo yapısı `sayfalar`
+--
+
+DROP TABLE IF EXISTS `sayfalar`;
+CREATE TABLE IF NOT EXISTS `sayfalar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `baslik` varchar(100) NOT NULL,
+  `icerik` text NOT NULL,
+  `meta` varchar(160) NOT NULL,
+  `foto` varchar(50) NOT NULL,
+  `fotoalt` varchar(90) NOT NULL,
+  `seotitle` varchar(70) NOT NULL,
+  `durum` varchar(10) NOT NULL,
+  `sayfaturu` varchar(10) NOT NULL,
+  `tarih` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `sayfalar`
+--
+
+INSERT INTO `sayfalar` (`id`, `baslik`, `icerik`, `meta`, `foto`, `fotoalt`, `seotitle`, `durum`, `sayfaturu`, `tarih`) VALUES
+(1, 'hakkımda', '<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatibus error corporis labore aperiam doloremque, neque, delectus beatae velit enim eos! Mollitia quisquam incidunt aspernatur maxime vero in, recusandae ex libero autem voluptas officiis suscipit eum, ullam explicabo sed officia. Voluptatem ex ipsum amet eius in repudiandae molestias quas sunt quidem unde dicta accusamus omnis temporibus, laboriosam veniam deleniti possimus sequi dolorum dignissimos non! Pariatur adipisci nisi ex cupiditate porro officiis cumque ab accusantium! Tempora iusto error minus optio ullam hic nostrum, qui repellat molestias minima? Animi quaerat dolorem delectus, excepturi, quo iure, iste consequuntur neque quod dolores hic ullam.</p>\r\n', 'excepturi, quo iure, iste consequuntur neque quod dolores hic ullam.', '../img/foto (5).jpg', 'hakkımda', 'hakkımda', 'Yayınlandı', 'Üst Sayfa', '1994-12-25');
+
+-- --------------------------------------------------------
+
+--
 -- Tablo için tablo yapısı `yazilar`
 --
 
@@ -100,7 +128,7 @@ INSERT INTO `yazilar` (`id`, `baslik`, `icerik`, `meta`, `foto`, `fotoalt`, `kat
 (4, 'blog yazısı 3', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi harum architecto, maxime laborum suscipit possimus beatae esse! Nemo, dolor nisi aperiam distinctio commodi sequi repellat facilis accusantium perspiciatis quas similique quibusdam, voluptatibus consequatur! Praesentium dicta amet laborum consequatur? Assumenda libero neque ad suscipit quo eaque modi omnis quaerat dolorem voluptas id similique harum nisi, pariatur cum quibusdam mollitia veritatis rem laudantium. Consectetur, corrupti facilis. Quas minima voluptatum at debitis sapiente? Nisi accusamus, officiis necessitatibus fugit recusandae voluptatibus corporis obcaecati. Cumque non eum iure deserunt sapiente commodi accusamus ipsam, neque libero explicabo porro, sunt totam maiores nisi natus ea numquam. Quidem.</p>\r\n', 'unt sapiente commodi accusamus ipsam, neque libero explicabo porro,', '../img/blog-foto-190x190px.jpg', 'unt sapiente commodi accusamus ipsam, neque libero explicabo porro,', 'dijital pazarlama', '1994-12-22', 'Yayınlandı'),
 (6, 'blog yazısı5 ', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, tempora, laboriosam modi velit iste quisquam suscipit magni obcaecati pariatur dolorum molestiae dolor unde delectus non eius, quo perspiciatis aspernatur sint accusantium? Est et dolores rerum dolore libero soluta iure, numquam unde dolorum. Aut at cum saepe expedita, eum quidem magnam veritatis quas. Neque deleniti distinctio quae quod fuga. Ratione veritatis numquam itaque est, qui ullam distinctio aperiam quasi accusantium nobis accusamus non quam sequi esse, atque at, obcaecati voluptate voluptas voluptates corporis quisquam nulla nam quae inventore. Tempore, laborum itaque sit blanditiis ipsam, reiciendis enim iste molestias debitis inventore eveniet.</p>\r\n', 'ipsam, reiciendis enim iste molestias debitis inventore eveniet.', '../img/foto (4).jpg', 'ipsam, reiciendis enim iste molestias debitis inventore eveniet.', 'dijital pazarlama', '1994-10-12', 'Yayınlandı'),
 (7, 'blog yazısı 6', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, tempora, laboriosam modi velit iste quisquam suscipit magni obcaecati pariatur dolorum molestiae dolor unde delectus non eius, quo perspiciatis aspernatur sint accusantium? Est et dolores rerum dolore libero soluta iure, numquam unde dolorum. Aut at cum saepe expedita, eum quidem magnam veritatis quas. Neque deleniti distinctio quae quod fuga. Ratione veritatis numquam itaque est, qui ullam distinctio aperiam quasi accusantium nobis accusamus non quam sequi esse, atque at, obcaecati voluptate voluptas voluptates corporis quisquam nulla nam quae inventore. Tempore, laborum itaque sit blanditiis ipsam, reiciendis enim iste molestias debitis inventore eveniet.</p>\r\n', 'voluptate voluptas voluptates corporis quisquam nulla nam quae inventore', '../img/foto (9).jpg', 'web tasarım ', 'dijital pazarlama', '2020-03-03', 'Yayınlandı'),
-(8, 'Arı bilgi logo', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, tempora, laboriosam modi velit iste quisquam suscipit magni obcaecati pariatur dolorum molestiae dolor unde delectus non eius, quo perspiciatis aspernatur sint accusantium? Est et dolores rerum dolore libero soluta iure, numquam unde dolorum. Aut at cum saepe expedita, eum quidem magnam veritatis quas. Neque deleniti distinctio quae quod fuga. Ratione veritatis numquam itaque est, qui ullam distinctio aperiam quasi accusantium nobis accusamus non quam sequi esse, atque at, obcaecati voluptate voluptas voluptates corporis quisquam nulla nam quae inventore. Tempore, laborum itaque sit blanditiis ipsam, reiciendis enim iste molestias debitis inventore eveniet.</p>\r\n', 'ipsam, reiciendis enim iste molestias debitis inventore eveniet.', '../img/dijital-pazarlama-banner-1500x600px.jpg', 'ipsam, reiciendis enim iste molestias debitis inventore eveniet.', 'web tasarım', '1995-04-15', 'Yayınlandı');
+(8, 'sosyal medya takipçi kazanma', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, tempora, laboriosam modi velit iste quisquam suscipit magni obcaecati pariatur dolorum molestiae dolor unde delectus non eius, quo perspiciatis aspernatur sint accusantium? Est et dolores rerum dolore libero soluta iure, numquam unde dolorum. Aut at cum saepe expedita, eum quidem magnam veritatis quas. Neque deleniti distinctio quae quod fuga. Ratione veritatis numquam itaque est, qui ullam distinctio aperiam quasi accusantium nobis accusamus non quam sequi esse, atque at, obcaecati voluptate voluptas voluptates corporis quisquam nulla nam quae inventore. Tempore, laborum itaque sit blanditiis ipsam, reiciendis enim iste molestias debitis inventore eveniet.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&gt;</p>\r\n', 'ipsam, reiciendis enim iste molestias debitis inventore eveniet.', '../img/foto (2).jpg', 'sosyal medya takipçi kazanma', 'web tasarım', '1995-04-15', 'Yayınlandı');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
