@@ -89,7 +89,7 @@ $satir_düzenle = $sorgu_düzenle -> fetch();
                             if(move_uploaded_file($_FILES['foto']['tmp_name'],$yuklenecekfoto)){
                                 $sorgu_guncelle =$db-> prepare('update yazilar set baslik=?, icerik=?, meta=?, foto=?, fotoalt=?, kategori=?, tarih=?, durum=? where id=?');
                                 $sorgu_guncelle -> execute(array($baslik,$icerik,$meta,$yuklenecekfoto,$fotoalt,$kategori,$tarih,$durum,$id));
-
+                                        
                                 if($sorgu_guncelle -> rowCount()){
                                     echo '<div class="alert alert-success">kayıt güncellendi</div><meta http-equiv="refresh" content="2; url=yazilar.php">';
                                 }else{

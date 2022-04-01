@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 30 Mar 2022, 18:46:23
+-- Üretim Zamanı: 01 Nis 2022, 18:31:14
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.3.21
 
@@ -89,14 +89,15 @@ CREATE TABLE IF NOT EXISTS `sayfalar` (
   `sayfaturu` varchar(10) NOT NULL,
   `tarih` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `sayfalar`
 --
 
 INSERT INTO `sayfalar` (`id`, `baslik`, `icerik`, `meta`, `foto`, `fotoalt`, `seotitle`, `durum`, `sayfaturu`, `tarih`) VALUES
-(1, 'hakkımda', '<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatibus error corporis labore aperiam doloremque, neque, delectus beatae velit enim eos! Mollitia quisquam incidunt aspernatur maxime vero in, recusandae ex libero autem voluptas officiis suscipit eum, ullam explicabo sed officia. Voluptatem ex ipsum amet eius in repudiandae molestias quas sunt quidem unde dicta accusamus omnis temporibus, laboriosam veniam deleniti possimus sequi dolorum dignissimos non! Pariatur adipisci nisi ex cupiditate porro officiis cumque ab accusantium! Tempora iusto error minus optio ullam hic nostrum, qui repellat molestias minima? Animi quaerat dolorem delectus, excepturi, quo iure, iste consequuntur neque quod dolores hic ullam.</p>\r\n', 'excepturi, quo iure, iste consequuntur neque quod dolores hic ullam.', '../img/foto (5).jpg', 'hakkımda', 'hakkımda', 'Yayınlandı', 'Üst Sayfa', '1994-12-25');
+(1, 'hakkımda', '<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatibus error corporis labore aperiam doloremque, neque, delectus beatae velit enim eos! Mollitia quisquam incidunt aspernatur maxime vero in, recusandae ex libero autem voluptas officiis suscipit eum, ullam explicabo sed officia. Voluptatem ex ipsum amet eius in repudiandae molestias quas sunt quidem unde dicta accusamus omnis temporibus, laboriosam veniam deleniti possimus sequi dolorum dignissimos non! Pariatur adipisci nisi ex cupiditate porro officiis cumque ab accusantium! Tempora iusto error minus optio ullam hic nostrum, qui repellat molestias minima? Animi quaerat dolorem delectus, excepturi, quo iure, iste consequuntur neque quod dolores hic ullam.</p>\r\n', 'excepturi, quo iure, iste consequuntur neque quod dolores hic ullam.', '../img/foto (5).jpg', 'hakkımda', 'hakkımda', 'Yayınlandı', 'Üst Sayfa', '1994-12-25'),
+(4, 'web tasarım hizmetleri', '<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta laborum ipsa, odio blanditiis minima officiis inventore asperiores facilis sunt qui ipsam rerum atque quasi quam corrupti repellendus mollitia nam cumque facere accusantium quia eos beatae harum. Debitis vel ducimus laboriosam rerum impedit dolore odit? Ratione deleniti ducimus nemo odit nisi tenetur consequatur expedita? Sint illum et a, voluptatum dolorum pariatur id, voluptate exercitationem perferendis praesentium nobis eveniet corporis tempora nemo blanditiis eos ipsa laudantium molestias facere quia nesciunt facilis. Est libero accusantium nam obcaecati ea quasi aliquid, vel voluptas consequatur quisquam voluptatem corrupti harum quas ducimus totam? Eos, harum aliquid!</p>\r\n', 'web tasarım hizmetleri', '../img/foto (4).jpg', 'web tasarım yasarım', 'web tasarım hizmeti', 'Yayınlandı', 'Üst Sayfa', '2022-12-25');
 
 -- --------------------------------------------------------
 
