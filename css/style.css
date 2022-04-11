@@ -1,12 +1,51 @@
-#admincontent li{
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+#adminContent li {
     list-style-type: none;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-#admincontent li a{
-    color:#fff;
+
+#adminContent li a {
+    color: #fff;
     text-decoration: none;
 }
-#admincontent .col-md-2{
+
+
+/* #adminContent .col-md-2 {
     height: 100vh;
+} */
+
+#footer {
+    background-color: #2d2b3a;
+}
+
+#footer a {
+    color: #fff;
+}
+
+#iletisimBanner , #blogbanner {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#iletisimBanner a, #blogbanner a {
+    color: #fff;
+}
+
+#info i {
+    font-size: 32px;
+}
+
+.py-15 {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.mor {
+    color: #6c55f9;
+}
+
+.btn-mor {
+    background-color: #6c55f9;
+    color: #fff;
 }

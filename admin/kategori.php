@@ -64,9 +64,6 @@
             </div>
             <div class="col-md-9">
                 <h3>Kategori Listesi</h3>
-
-
-
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -81,33 +78,33 @@
                     <tbody>
 
                         <?php
-                        $sorgu_katlist = $db->prepare('select * from kategoriler');
+                        $sorgu_katlist = $db->prepare('select * from kategoriler order by kategori desc');
                         $sorgu_katlist->execute();
 
                         if ($sorgu_katlist->rowCount()) {
                             foreach ($sorgu_katlist as $satir_katlist) {
                         ?>
                                 <tr>
-                                    <td> <?php echo $satir_katlist['id'];?></td>
-                                    <td> <?php echo $satir_katlist['kategori'];?> </td>
-                                    <td><?php echo $satir_katlist['katturu'];?></td>
-                                    <td><?php echo $satir_katlist['ustkat'];?></td>
-                                    <th><a href="kategoridüzenle.php?id=<?php   echo $satir_katlist ['id'];?>"><button class="btn btn-dark">Düzenle</button></a></th>
-                                    <th><a href="kategorisil.php?id=<?php echo $satir_katlist['id']; ?>"><button class="btn btn-dark">Sil</button></a></th>
+                                    <td><?php echo $satir_katlist['id']; ?></td>
+                                    <td><?php echo $satir_katlist['kategori']; ?></td>
+                                    <td><?php echo $satir_katlist['katturu']; ?></td>
+                                    <td><?php echo $satir_katlist['ustkat']; ?></td>
+                                    <td><a href="kategoriduzenle.php?id=<?php echo $satir_katlist['id']; ?>"><button class="btn btn-warning">Düzenle</button></a></td>
+                                    <td><a href="kategorisil.php?id=<?php echo $satir_katlist['id']; ?>"><button class="btn btn-danger">Sil</button></a></td>
                                 </tr>
                         <?php
                             }
                         }
                         ?>
-
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
 </section>
 <!-- Kategoriler Section End -->
+
+
 
 
 

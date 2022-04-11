@@ -1,10 +1,11 @@
-<?php require_once('header.php'); 
+<?php
 
+require_once('header.php');
 
 $id = $_GET['id'];
-$sorgu_icerik = $db-> prepare('select * from sayfalar where id=?');
-$sorgu_icerik -> execute(array($id));
-$satir_icerik = $sorgu_icerik -> fetch();
+$sorgu_icerik = $db->prepare('select * from sayfalar where id=?');
+$sorgu_icerik->execute(array($id));
+$satir_icerik = $sorgu_icerik->fetch();
 
 ?>
 
@@ -19,48 +20,48 @@ $satir_icerik = $sorgu_icerik -> fetch();
         <form class="form-row" method="post" enctype="multipart/form-data">
             <div class="col-md-8">
                 <div class="form-group">
-                    <input type="text" name="baslik" class="form-control" value="<?php echo $satir_icerik ['baslik'];?>">
+                    <input type="text" name="baslik" class="form-control" value="<?php echo $satir_icerik['baslik']; ?>">
                 </div>
                 <div class="form-group">
-                    <textarea name="icerik" rows="7" class="form-control" ><?php echo $satir_icerik ['icerik'];?></textarea>
+                    <textarea name="icerik" rows="7" class="form-control"><?php echo $satir_icerik['icerik']; ?></textarea>
                     <script>
                         CKEDITOR.replace('icerik');
                     </script>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="meta" value="<?php echo $satir_icerik ['meta']?>" class="form-control">
+                    <input type="text" name="meta" value="<?php echo $satir_icerik['meta']; ?>" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label><small><img src="<?php echo $satir_icerik ['foto']?>" class="img-fluid"></small></label>
+                    <img src="<?php echo $satir_icerik['foto']; ?>" class="img-fluid">
                     <input type="file" name="foto">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="fotoalt" class="form-control" value="<?php echo $satir_icerik ['fotoalt'];?>">
+                    <input type="text" name="fotoalt" class="form-control" value="<?php echo $satir_icerik['fotoalt']; ?>">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="seotitle" value="<?php echo $satir_icerik ['seotitle'];?>" class="form-control">
+                    <input type="text" name="seotitle" class="form-control" value="<?php echo $satir_icerik['seotitle']; ?>">
                 </div>
                 <div class="form-group">
-                    <label><small>Durum -> <?php echo $satir_icerik['durum'];?></small></label>
+                    <label><small>Durum -> <?php echo $satir_icerik['durum']; ?></small></label>
                     <select name="durum" class="form-control">
-                        <option value="<?php echo $satir_icerik ['sayfaturu'];?>">Seçiniz</option>
+                        <option value="<?php echo $satir_icerik['durum']; ?>"><?php echo $satir_icerik['durum']; ?></option>
                         <option value="Taslak">Taslak</option>
                         <option value="Yayınlandı">Yayınlandı</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label><small>Sayfa Türü -> <?php echo $satir_icerik ['sayfaturu'];?></small></label>
+                    <label><small>Sayfa Türü -> <?php echo $satir_icerik['sayfaturu']; ?></small></label>
                     <select name="sayfaturu" class="form-control">
-                        <option value="">Seçiniz</option>
+                        <option value="<?php echo $satir_icerik['sayfaturu']; ?>"><?php echo $satir_icerik['sayfaturu']; ?></option>
                         <option value="Alt Sayfa">Alt Sayfa</option>
                         <option value="Üst Sayfa">Üst Sayfa</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label><small>Yayınlanma Tarihi</small></label>
-                    <input type="date" name="tarih" class="form-control" value="<?php echo $satir_icerik['tarih'];?>">
+                    <input type="date" name="tarih" class="form-control" value="<?php echo $satir_icerik['tarih']; ?>">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success w-100">Kaydet</button>

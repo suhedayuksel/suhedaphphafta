@@ -2,14 +2,12 @@
 session_start();
 
 if(!isset($_SESSION['kadi'])){
-    die('giriş yetkiniz yoktur.');
+    die('Giriş Yetkiniz Yoktur.');
 }
 
 require_once('baglan.php');
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +23,7 @@ require_once('baglan.php');
     <link rel="stylesheet" href="../css/style.css">
 
     <title>Başlık</title>
-    
+
     <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
 
 </head>
@@ -33,21 +31,21 @@ require_once('baglan.php');
 <body>
 
 
-<section id="admincontent">
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2 bg-dark text-white">
-            <h2>Arı Bilgi </h2>
-            <ul class="p-0">
-                <li><a href="dashboard.php">başlangıç</a></li>
-                <li><a href="sayfalar.php">sayfalar</a></li>
-                <li><a href="yazilar.php">yazılar</a></li>
-                <li><a href="yorumlar.php">yorumlar</a></li>
-                <li><a href="kategori.php">kategori</a></li>
-                <li><a href="mesajlar.php">mesajlar</a></li>
-                <li><a href="ebulten.php">e-bülten üyleri</a></li>
-                <li><a href="logout.php">çıkış</a></li>
-                
-            </ul>
-        </div>
-        <div class="col-md-10">
+    <section id="adminContent">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 bg-dark text-white">
+                    <h2>Arı Bilgi</h2>
+                    <ul class="p-0">
+                        <li><a href="dashboard.php">Başlangıç</a></li>
+                        <li><a href="sayfalar.php">Sayfalar</a></li>
+                        <li><a href="yazilar.php">Yazılar</a></li>
+                        <li><a href="yorumlar.php">Yorumlar</a></li>
+                        <li><a href="kategori.php">Kategoriler</a></li>
+                        <li><a href="mesajlar.php">Mesajlar</a></li>
+                        <li><a href="ebulten.php">E-Bülten Üyeleri</a></li>
+                        <li><a href="ayarlar.php">Ayarlar</a></li>
+                        <li><a href="logout.php">Çıkış</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10">
