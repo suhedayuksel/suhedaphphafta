@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.5.1
--- http://www.phpmyadmin.net
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
 --
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 08 Nis 2022, 18:38:17
--- Sunucu sürümü: 5.7.11
--- PHP Sürümü: 5.6.19
+-- Anamakine: 127.0.0.1:3306
+-- Üretim Zamanı: 13 Nis 2022, 18:45:15
+-- Sunucu sürümü: 5.7.31
+-- PHP Sürümü: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,8 +27,9 @@ SET time_zone = "+00:00";
 -- Tablo için tablo yapısı `ayarlar`
 --
 
-CREATE TABLE `ayarlar` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `ayarlar`;
+CREATE TABLE IF NOT EXISTS `ayarlar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `adres` varchar(100) NOT NULL,
   `telefon` varchar(15) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -43,15 +45,16 @@ CREATE TABLE `ayarlar` (
   `analitik` text NOT NULL,
   `konsol` text NOT NULL,
   `piksel` text NOT NULL,
-  `copy` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `copy` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `ayarlar`
 --
 
 INSERT INTO `ayarlar` (`id`, `adres`, `telefon`, `email`, `harita`, `tanitim`, `logo`, `blogbanner`, `iletisimbanner`, `facebook`, `instagram`, `twitter`, `whatsapp`, `analitik`, `konsol`, `piksel`, `copy`) VALUES
-(1, 'Lorem Ipsum Dolor Sit Amet', '05555555555', 'kaan@kaan.com', '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6504900450736!2d29.021533914711632!3d40.9891335285528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab8679bfb3d31%3A0x7d75715e081dfa5c!2sAr%C4%B1%20Bilgi%20Bili%C5%9Fim%20Teknolojileri%20Akademisi%20(Kad%C4%B1k%C3%B6y%20%C5%9Eube)!5e0!3m2!1str!2str!4v1649097246432!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pharetra egestas leo non eleifend. ', '../img/logo.webp', '../img/blog-banner.jpg', '../img/iletisim-banner.jpeg', 'https://www.facebook.com', 'https://www.instagram.com', 'https://www.twitter.com', 'https://wa.me/05555555555', 'wefwewdcwdcwfewverwfv', 'verveveververververververver', 'verververververveververververver', 'Her hakkı Saklıdır &copy; 2022. Arı Bilişim');
+(1, 'Lorem Ipsum Dolor Sit Amet', '05555555555', 'kaan@kaan.com', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6504900450736!2d29.021533914711632!3d40.9891335285528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab8679bfb3d31%3A0x7d75715e081dfa5c!2sAr%C4%B1%20Bilgi%20Bili%C5%9Fim%20Teknolojileri%20Akademisi%20(Kad%C4%B1k%C3%B6y%20%C5%9Eube)!5e0!3m2!1str!2str!4v1649097246432!5m2!1str!2str\" width=\"100%\" height=\"100%\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pharetra egestas leo non eleifend. ', '../img/logo.webp', '../img/blog-banner.jpg', '../img/iletisim-banner.jpeg', 'https://www.facebook.com', 'https://www.instagram.com', 'https://www.twitter.com', 'https://wa.me/05555555555', 'wefwewdcwdcwfewverwfv', 'verveveververververververver', 'verververververveververververver', 'Her hakkı Saklıdır &copy; 2022. Arı Bilişim');
 
 -- --------------------------------------------------------
 
@@ -59,13 +62,15 @@ INSERT INTO `ayarlar` (`id`, `adres`, `telefon`, `email`, `harita`, `tanitim`, `
 -- Tablo için tablo yapısı `kategoriler`
 --
 
-CREATE TABLE `kategoriler` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `kategoriler`;
+CREATE TABLE IF NOT EXISTS `kategoriler` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(25) NOT NULL,
   `katturu` varchar(15) NOT NULL,
   `ustkat` varchar(30) NOT NULL,
-  `meta` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `meta` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `kategoriler`
@@ -85,14 +90,16 @@ INSERT INTO `kategoriler` (`id`, `kategori`, `katturu`, `ustkat`, `meta`) VALUES
 -- Tablo için tablo yapısı `mesajlar`
 --
 
-CREATE TABLE `mesajlar` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `mesajlar`;
+CREATE TABLE IF NOT EXISTS `mesajlar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `ad` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `konu` varchar(13) NOT NULL,
   `mesaj` text NOT NULL,
-  `durum` varchar(8) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `durum` varchar(8) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `mesajlar`
@@ -109,12 +116,14 @@ INSERT INTO `mesajlar` (`id`, `ad`, `email`, `konu`, `mesaj`, `durum`) VALUES
 -- Tablo için tablo yapısı `ornek`
 --
 
-CREATE TABLE `ornek` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `ornek`;
+CREATE TABLE IF NOT EXISTS `ornek` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `ad` varchar(20) NOT NULL,
   `yas` int(3) NOT NULL,
-  `il` varchar(15) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `il` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `ornek`
@@ -130,8 +139,9 @@ INSERT INTO `ornek` (`id`, `ad`, `yas`, `il`) VALUES
 -- Tablo için tablo yapısı `sayfalar`
 --
 
-CREATE TABLE `sayfalar` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `sayfalar`;
+CREATE TABLE IF NOT EXISTS `sayfalar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `baslik` varchar(100) NOT NULL,
   `icerik` text NOT NULL,
   `meta` varchar(160) NOT NULL,
@@ -140,8 +150,9 @@ CREATE TABLE `sayfalar` (
   `seotitle` varchar(70) NOT NULL,
   `durum` varchar(10) NOT NULL,
   `sayfaturu` varchar(10) NOT NULL,
-  `tarih` varchar(10) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `tarih` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `sayfalar`
@@ -160,8 +171,9 @@ INSERT INTO `sayfalar` (`id`, `baslik`, `icerik`, `meta`, `foto`, `fotoalt`, `se
 -- Tablo için tablo yapısı `yazilar`
 --
 
-CREATE TABLE `yazilar` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `yazilar`;
+CREATE TABLE IF NOT EXISTS `yazilar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `baslik` varchar(100) NOT NULL,
   `icerik` text NOT NULL,
   `meta` varchar(160) NOT NULL,
@@ -169,8 +181,9 @@ CREATE TABLE `yazilar` (
   `fotoalt` varchar(100) NOT NULL,
   `kategori` varchar(25) NOT NULL,
   `tarih` varchar(11) NOT NULL,
-  `durum` varchar(15) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `durum` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `yazilar`
@@ -191,8 +204,9 @@ INSERT INTO `yazilar` (`id`, `baslik`, `icerik`, `meta`, `foto`, `fotoalt`, `kat
 -- Tablo için tablo yapısı `yazilara`
 --
 
-CREATE TABLE `yazilara` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `yazilara`;
+CREATE TABLE IF NOT EXISTS `yazilara` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `baslik` varchar(100) NOT NULL,
   `icerik` text NOT NULL,
   `meta` varchar(160) NOT NULL,
@@ -200,94 +214,36 @@ CREATE TABLE `yazilara` (
   `fotoalt` varchar(100) NOT NULL,
   `kategori` varchar(25) NOT NULL,
   `tarih` varchar(11) NOT NULL,
-  `durum` varchar(15) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `durum` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
 
 --
--- Dökümü yapılmış tablolar için indeksler
+-- Tablo için tablo yapısı `yorumlar`
 --
 
---
--- Tablo için indeksler `ayarlar`
---
-ALTER TABLE `ayarlar`
-  ADD PRIMARY KEY (`id`);
+DROP TABLE IF EXISTS `yorumlar`;
+CREATE TABLE IF NOT EXISTS `yorumlar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `adiniz` varchar(50) NOT NULL,
+  `soyadiniz` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `yorum` text NOT NULL,
+  `baslik` varchar(150) NOT NULL,
+  `durum` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Tablo için indeksler `kategoriler`
---
-ALTER TABLE `kategoriler`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `mesajlar`
---
-ALTER TABLE `mesajlar`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `ornek`
---
-ALTER TABLE `ornek`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `sayfalar`
---
-ALTER TABLE `sayfalar`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `yazilar`
---
-ALTER TABLE `yazilar`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `yazilara`
---
-ALTER TABLE `yazilara`
-  ADD PRIMARY KEY (`id`);
-
---
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+-- Tablo döküm verisi `yorumlar`
 --
 
---
--- Tablo için AUTO_INCREMENT değeri `ayarlar`
---
-ALTER TABLE `ayarlar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- Tablo için AUTO_INCREMENT değeri `kategoriler`
---
-ALTER TABLE `kategoriler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- Tablo için AUTO_INCREMENT değeri `mesajlar`
---
-ALTER TABLE `mesajlar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- Tablo için AUTO_INCREMENT değeri `ornek`
---
-ALTER TABLE `ornek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- Tablo için AUTO_INCREMENT değeri `sayfalar`
---
-ALTER TABLE `sayfalar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- Tablo için AUTO_INCREMENT değeri `yazilar`
---
-ALTER TABLE `yazilar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- Tablo için AUTO_INCREMENT değeri `yazilara`
---
-ALTER TABLE `yazilara`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+INSERT INTO `yorumlar` (`id`, `adiniz`, `soyadiniz`, `email`, `yorum`, `baslik`, `durum`) VALUES
+(1, 'şüheda', 'yüksel', 'suheda_yuksel_28@hotmail.com', 'çok tatlı bir yazı', 'Sosyal Medyada Takipçi Kazanma', 'onaylanmadı');
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
