@@ -5,6 +5,7 @@ $id = $_GET['id'];
 $sorgu_makale = $db -> prepare('select * from yazilar where id=?');
 $sorgu_makale -> execute(array($id));
 $satir_makale = $sorgu_makale -> fetch();
+$baslik = $satir_makale['baslik'];
 
 ?>
 
@@ -57,6 +58,24 @@ $satir_makale = $sorgu_makale -> fetch();
                     </div>
                     </div>
                 </form>
+                <?php 
+                if($_POST){
+                    $adiniz= $_POST['adiniz'];
+                    $soyadiniz =$_POST['soyadiniz'];
+                    $email = $_POST['email'];
+                    $yorum =$_POST['yorum'];
+                    $durum ='onaylanmadı';
+
+                    $sorgu_yorumkaydet = $db-> prepare('insert into yorumlar (adiniz,soyadiniz,email,yorum,baslik,durum) values(?,?,?,?,?,?)');
+                    $sorgu_yorumkaydet -> execute(array($adiniz,$soyadiniz,$email,$yorum,$baslik,$durum));
+                    if($sorgu_yorumkaydet -> rowCount()){
+                        echo '<div class="alert alert-success">Yorumunuz Admin Onayına Gönderildi</div>';
+                    }else{
+                        echo '<div class="alert alert-danger">Hata Oluştu.</div>';
+                    }
+                }
+                
+                ?>
             </div>
             <?php require_once('sidebar.php')?>
         </div>
