@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 13 Nis 2022, 18:45:15
+-- Üretim Zamanı: 15 Nis 2022, 18:32:18
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.3.21
 
@@ -234,14 +234,16 @@ CREATE TABLE IF NOT EXISTS `yorumlar` (
   `baslik` varchar(150) NOT NULL,
   `durum` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `yorumlar`
 --
 
 INSERT INTO `yorumlar` (`id`, `adiniz`, `soyadiniz`, `email`, `yorum`, `baslik`, `durum`) VALUES
-(1, 'şüheda', 'yüksel', 'suheda_yuksel_28@hotmail.com', 'çok tatlı bir yazı', 'Sosyal Medyada Takipçi Kazanma', 'onaylanmadı');
+(1, 'şüheda', 'yüksel', 'suheda_yuksel_28@hotmail.com', 'çok tatlı bir yazı', 'Sosyal Medyada Takipçi Kazanma', 'onaylandı'),
+(4, 'büşra', 'kegaki', 'busra_kegaki@hotmail.com', 'dfjksdhjfgdfg', 'Blog Yazısı 6', 'onaylanmadı'),
+(5, 'mahmut', 'tuncer', 'mahmut_tuncer@hotmail.com', 'jfdhjkeghtr', 'Blog Yazısı 6', 'onaylanmadı');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
