@@ -60,3 +60,9 @@ font-size: 24px;
 .bg-mor{
     background-color: #6c55f9;
 }
+#hizmetbanner{
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
