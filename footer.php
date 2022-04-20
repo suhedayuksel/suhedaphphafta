@@ -1,5 +1,5 @@
 <!-- footer Section start -->
-<section id="footer" class="py-5 text-white">
+<section id="footer" class="pt-5 pb-1 text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -24,6 +24,20 @@
                             <input type="submit" value="Gönder" class="btn btn-success w-100">
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <?php
+                  $sorgu_bottom = $db -> prepare('select * from ayarlar order by id desc limit 1');
+                  $sorgu_bottom -> execute();
+                  $satir_bottom = $sorgu_bottom -> fetch();
+                  echo $satir_bottom['copy'].' '.date('Y');
+                  
+                  ?>
+                </div>
+                <div class="col-md-6 text-right">
+                    Web Sitesi <a href="#">ŞÜHEDA YÜKSEL</a> Tarafından Yapılmıştır.
                 </div>
             </div>
         </div>
