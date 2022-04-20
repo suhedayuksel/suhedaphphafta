@@ -42,7 +42,7 @@ $satir_banner = $sorgu_banner -> fetch();
 <!-- search section end -->
 
 <!-- blog list section start -->
-<section id="bloglist" class="pt-5">
+<section id="bloglist" class="pb-5">
     <div class="container">
         <div class="row">
             <?php 
