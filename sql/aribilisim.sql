@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 20 Nis 2022, 18:39:59
+-- Üretim Zamanı: 22 Nis 2022, 18:20:30
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.3.21
 
@@ -71,14 +71,40 @@ CREATE TABLE IF NOT EXISTS `hakkimdabanner` (
   `tekrar` varchar(50) NOT NULL,
   `size` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `hakkimdabanner`
 --
 
 INSERT INTO `hakkimdabanner` (`id`, `foto`, `baslik`, `konum`, `tekrar`, `size`) VALUES
-(1, '../img/hakkimda-banner-1500x600px.jpg', 'hakkımda', 'background-position:center center;', 'background-repeat:no-repeat;', 'background-size:cover;');
+(4, '../img/dijital-pazarlama-banner-1500x600px.jpg', 'hakkımda', 'background-position:center center;', 'background-repeat:no-repeat;', 'background-size:cover;'),
+(5, '../img/dijital-pazarlama-banner-1500x600px.jpg', 'HAKKIMDA', 'background-position:center center;', 'background-repeat:no-repeat;', 'background-size:cover;');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `hakkimdaicerik`
+--
+
+DROP TABLE IF EXISTS `hakkimdaicerik`;
+CREATE TABLE IF NOT EXISTS `hakkimdaicerik` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `foto` varchar(150) NOT NULL,
+  `altbaslik` varchar(100) NOT NULL,
+  `icerik` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `hakkimdaicerik`
+--
+
+INSERT INTO `hakkimdaicerik` (`id`, `foto`, `altbaslik`, `icerik`) VALUES
+(1, '../img/ari-bilisim-logo-512x97px.png', 'hakkımda', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis reprehenderit molestias enim, eos asperiores quasi rem explicabo voluptas voluptates exercitationem et commodi numquam vitae nostrum veritatis natus cumque alias iure placeat. Tempore quisquam incidunt iure unde? Explicabo sed fuga tempore placeat expedita illo ipsum quidem velit! Dignissimos culpa possimus esse iste aspernatur repellat ullam dolor pariatur? Repellat cupiditate autem modi vero placeat reprehenderit quibusdam, ad quas, veritatis qui inventore repudiandae nisi perferendis unde accusantium quaerat voluptate consectetur maxime provident ipsam quia id? Dicta, dignissimos laboriosam sint voluptate sit consequuntur repellendus autem quo mollitia ab! Fuga obcaecati at vel eligendi sequi.</p>\r\n'),
+(2, '../img/dijital-pazarlama-hizmeti-330x150px.jpg', 'icerik', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis reprehenderit molestias enim, eos asperiores quasi rem explicabo voluptas voluptates exercitationem et commodi numquam vitae nostrum veritatis natus cumque alias iure placeat. Tempore quisquam incidunt iure unde? Explicabo sed fuga tempore placeat expedita illo ipsum quidem velit! Dignissimos culpa possimus esse iste aspernatur repellat ullam dolor pariatur? Repellat cupiditate autem modi vero placeat reprehenderit quibusdam, ad quas, veritatis qui inventore repudiandae nisi perferendis unde accusantium quaerat voluptate consectetur maxime provident ipsam quia id? Dicta, dignissimos laboriosam sint voluptate sit consequuntur repellendus autem quo mollitia ab! Fuga obcaecati at vel eligendi sequi.</p>\r\n'),
+(3, '../img/hakkimda.png', 'İçerik', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia minus fuga quod laborum dolorem possimus, mollitia quisquam provident at voluptatibus debitis quaerat reiciendis, obcaecati aperiam ea aliquam. Quidem, nam saepe.</p>\r\n'),
+(4, '../img/hakkimda.png', 'HAKKIMDA', '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa deserunt tenetur iure modi esse eveniet eum natus, facilis dolores iste cum delectus consequuntur fugit suscipit veniam. Ipsa saepe rem aut non sunt, ea tenetur cum odio enim a repellendus assumenda inventore sed modi quos? Repellendus doloremque id expedita quibusdam magnam quaerat aperiam dignissimos fuga quas minus blanditiis asperiores, ipsam deserunt ut optio in repellat dolorum animi similique veniam facilis cupiditate reprehenderit. Nesciunt quisquam fugit eos assumenda praesentium? Aliquam voluptatum dolore qui dolores. Consequuntur exercitationem alias nisi non facere eius adipisci cum, laboriosam blanditiis autem error iste? Magnam, quibusdam aut ab, consectetur voluptatem quasi suscipit minima ex dolores fuga quo quisquam totam placeat hic qui cum ut aperiam nostrum adipisci vitae! Ipsa ab sapiente laborum. Pariatur ad tempora laborum magnam nam earum laboriosam minima atque optio dolor maiores neque, officiis iste, veritatis, beatae voluptatum natus cupiditate. Laborum vero ex veritatis ea possimus! Tempore natus cupiditate incidunt ipsa consequatur. Nisi eaque quam, quae debitis earum dolorem expedita magni eligendi laboriosam quis rem sequi non porro consectetur error excepturi neque vitae a at molestiae praesentium tempore esse necessitatibus omnis! Delectus eum recusandae aliquid quisquam suscipit voluptas facere itaque facilis! Ipsa odio labore nostrum.</p>\r\n');
 
 -- --------------------------------------------------------
 

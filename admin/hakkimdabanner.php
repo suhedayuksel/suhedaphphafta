@@ -155,8 +155,8 @@
 
 
                                     </td>
-                                    <td>düzenle</td>
-                                    <td>sil</td>
+                                    <td><a href="hakkimdabannerduzenle.php?id=<?php echo $satir_hakkimdabanner['id'];?>" class="btn btn-dark">Düzenle</a></td>
+                                    <td><a href="hakkimdabannersil.php?id=<?php echo $satir_hakkimdabanner['id'];?>" class="btn btn-dark">Sil</a></td>
                                 </tr>
                         <?php
                             }

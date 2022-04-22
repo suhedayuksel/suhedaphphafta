@@ -4,6 +4,11 @@ require_once('header.php');
 $sorgu_banner = $db -> prepare('select * from hakkimdabanner order by id desc limit 1');
 $sorgu_banner -> execute();
 $satir_banner= $sorgu_banner -> fetch();
+
+
+$sorgu_icerik = $db -> prepare('select * from hakkimdaicerik order by id desc limit 1');
+$sorgu_icerik -> execute();
+$satir_icerik = $sorgu_icerik -> fetch();
 ?>
 
 
@@ -33,17 +38,19 @@ class="py-15">
 <section id="icerik">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">img gelecek</div>
+            <div class="col-md-6 my-auto">
+                <img src="<?php echo substr($satir_icerik['foto'],3);?>">
+            </div>
             <div class="col-md-6">
            <div class="row">
                <div class="col-12">
-               <h2>Alt başlık 2 gelecek</h2>
-                <p>adminde ck editör ile metin alanı gelecek p yi silmeyi unutma</p>
+               <h2><?php echo $satir_icerik['altbaslik'];?></h2>
+                <?php echo $satir_icerik['icerik'];?>
                </div>
            </div>
            <div class="row">
                <div class="col-12">
-                   <h2>Alt başlık 3</h2>
+                   <h2></h2>
                    <p>progress barlar eklenecek</p>
                </div>
            </div>
