@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 25 Nis 2022, 18:37:13
+-- Üretim Zamanı: 27 Nis 2022, 18:26:15
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.3.21
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Veritabanı: `aribilisim`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `anabanner`
+--
+
+DROP TABLE IF EXISTS `anabanner`;
+CREATE TABLE IF NOT EXISTS `anabanner` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `baslik` varchar(150) NOT NULL,
+  `aciklama` varchar(300) NOT NULL,
+  `link` varchar(500) NOT NULL,
+  `foto` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `anabanner`
+--
+
+INSERT INTO `anabanner` (`id`, `baslik`, `aciklama`, `link`, `foto`) VALUES
+(1, 'arı bilişim dijital hizmetler', '<p><strong>dijital reklamcılık,</strong> <strong>web tasarımı </strong>ve <strong>seo hizmetleri</strong> i&ccedil;in hızlı g&uuml;venilir ve kaliteli sonu&ccedil; alma i&ccedil;in hemen arayın</p>\r\n', '<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/hcF4VKXe5d0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '../img/ari-bilisim-dijitalhizmetler-500x500.gif');
 
 -- --------------------------------------------------------
 
