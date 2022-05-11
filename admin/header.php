@@ -45,7 +45,8 @@ require_once('baglan.php');
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item text-dark" href="anabanner.php">banner ayarları</a>
           <a class="dropdown-item text-dark" href="princing.php">princing ayarları</a>
-          <a class="dropdown-item text-dark" href="#">Something else here</a>
+          <a class="dropdown-item text-dark" href="analiz.php">seo analiz</a>
+          <a class="dropdown-item text-dark" href="maincta.php">ana safa cta ayarları</a>
         </div>
       </li>
       <li class="nav-item dropdown">

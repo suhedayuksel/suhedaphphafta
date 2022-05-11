@@ -123,55 +123,133 @@ $satir_hakkimda = $sorgu_hakkimda->fetch();
 <!-- özellikler section end -->
 
 <!-- seo başvuru section start -->
-<section id="anasoebasvuru">
+<section id="anaseobasvuru" class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h2>Ücretsiz Seo Analizi</h2>
             </div>
         </div>
-        <form method="post" class="form-row">
-            <div class="col-md-4">
+       <div class="col-7 mx-auto">
+       <form method="post" class="form-row">
+            <div class="col-md-5">
                 <div class="form-group">
                     <input type="text" name="web" placeholder="web site adresinizi girin" class="form-control">
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="form-group">
                     <input type="email" name="email" class="form-control" placeholder="e posta adresinizi girin">
                 </div>
             </div>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-mor">Gönder</button>
+            <div class="col-md-2">
+                <button type="submit" name="analiz" class="btn btn-warning w-100">Gönder</button>
             </div>
     </div>
     </form>
+    <?php 
+    if(isset($_POST['analiz'])){
+        $web = $_POST['web'];
+        $email = $_POST['email'];
+        $puan= "-";
+        $sorgu_analiz = $db -> prepare('insert into seoanaliz(web,email,puan) values(?,?,?)');
+        $sorgu_analiz -> execute(array($web,$email,$puan));
+        if($sorgu_analiz -> rowCount()){
+            echo '<div class="text-white text-center">'.$web.'adresi için ücretsiz Seo Analizi talebiniz alınmıştır.</div>';
+        }else{
+            echo'hata oluştu lütfen tekrar deneyin';
+        }
+    }
+    
+    
+    ?>
+       </div>
 </section>
 <!-- seo başvuru section end -->
 <!-- hizmet icerikleri section start -->
-<section id="princing">
+<section id="princing" class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h3>Hizmet İçerikleri</h3>
                 <h2>Hizmetlerimizin ayrıntıları</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-4">
-                <div class="card">
+                <div class="card shadow">
+                    <?php  
+                    
+                    $sorgu_paket1 = $db ->prepare('select * from paket1 order by id desc limit 1');
+                    $sorgu_paket1 -> execute();
+                    $satir_paket1 = $sorgu_paket1 -> fetch();
+                    ?>
                     <div class="card-header text-center bg-transparent">
-                        <h4>temel paket</h4>
-                        <span style="font-size: 40px;">4500</span>
+                        <h4><?php echo $satir_paket1['baslik1'];?></h4>
+                        <span style="font-size: 40px;"><?php echo $satir_paket1['fiyat1'];?>tl</span>
                         <p>aylık</p>
                     </div>
                     <div class="card-body text-center">
                         <ul>
-                            <li>Hizmet içerik 1</li>
-                            <li>Hizmet içerik 2</li>
-                            <li>Hizmet içerik 3</li>
-                            <li>Hizmet içerik 4</li>
-                            <li>Hizmet içerik 5</li>
+                            <li><?php echo$satir_paket1['ozellik1a']; ?></li>
+                            <li><?php echo $satir_paket1['ozellik1b']; ?></li>
+                            <li><?php echo $satir_paket1['ozellik1c']; ?></li>
+                            <li><?php echo $satir_paket1['ozellik1d']; ?></li>
+                            <li><?php echo $satir_paket1['ozellik1e']; ?></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="iletsim.php" class="btn btn-warning w-100">teklif alın</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <?php  
+                    
+                    $sorgu_paket2 = $db ->prepare('select * from paket2 order by id desc limit 1');
+                    $sorgu_paket2 -> execute();
+                    $satir_paket2 = $sorgu_paket2 -> fetch();
+                    ?>
+                    <div class="card-header text-center bg-transparent">
+                        <h4><?php echo $satir_paket2['baslik2'];?></h4>
+                        <span style="font-size: 40px;"><?php echo $satir_paket2['fiyat2'];?>tl</span>
+                        <p>aylık</p>
+                    </div>
+                    <div class="card-body text-center">
+                        <ul>
+                            <li><?php echo $satir_paket2['ozellik2a']; ?></li>
+                            <li><?php echo $satir_paket2['ozellik2b']; ?></li>
+                            <li><?php echo $satir_paket2['ozellik2c']; ?></li>
+                            <li><?php echo $satir_paket2['ozellik2d']; ?></li>
+                            <li><?php echo $satir_paket2['ozellik2e']; ?></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="iletsim.php" class="btn btn-warning w-100">teklif alın</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <?php  
+                    
+                    $sorgu_paket3 = $db ->prepare('select * from paket3 order by id desc limit 1');
+                    $sorgu_paket3 -> execute();
+                    $satir_paket3 = $sorgu_paket3 -> fetch();
+                    ?>
+                    <div class="card-header text-center bg-transparent">
+                        <h4><?php echo $satir_paket3['baslik3'];?></h4>
+                        <span style="font-size: 40px;"><?php echo $satir_paket3['fiyat3'];?>tl</span>
+                        <p>aylık</p>
+                    </div>
+                    <div class="card-body text-center">
+                        <ul>
+                            <li><?php echo $satir_paket3['ozellik3a']; ?></li>
+                            <li><?php echo $satir_paket3['ozellik3b']; ?></li>
+                            <li><?php echo $satir_paket3['ozellik3c']; ?></li>
+                            <li><?php echo $satir_paket3['ozellik3d']; ?></li>
+                            <li><?php echo $satir_paket3['ozellik3e']; ?></li>
                         </ul>
                     </div>
                     <div class="card-footer bg-transparent">
@@ -183,21 +261,28 @@ $satir_hakkimda = $sorgu_hakkimda->fetch();
     </div>
 </section>
 <!-- hizmet icerikleri section end -->
-<!-- hizmet tanıtım section start -->
-<section id="hizmettanitim" class="py-mor">
+
+<!-- Hizmet Tanıtım Section Start -->
+<?php
+$sorgu_ctamain = $db -> prepare('select * from maincta order by id desc limit 1');
+$sorgu_ctamain -> execute();
+$satir_ctamain = $sorgu_ctamain -> fetch();
+?>
+
+<section id="hizmetTanitim" class="py-5" style="background-color:<?php echo $satir_ctamain['background']; ?> ;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-white">
-                <h2>Başlık gelecek</h2>
-                <p>kısa açıklama gelecek</p>
+                <h2 style="font-size:<?php echo $satir_ctamain['font']; ?>px;"><?php echo $satir_ctamain['baslik']; ?></h2>
+                <p style="font-size:<?php echo $satir_ctamain['font2']; ?>px;" ><?php echo $satir_ctamain['kisayazi']; ?></p>
             </div>
-            <div class="col-md-6">
-                görsel gelecek
+            <div class="col-md-6 my-auto text-center">
+                <a href="tel:+905555555555"><button class="btn btn-warning">Hemen Arayın</button></a>
             </div>
         </div>
     </div>
 </section>
-<!-- hizmet tanıtım end -->
+<!-- Hizmet Tanıtım Section End -->
 
 <!-- güncel blog section start -->
 <section id="blogozet" class="py-5">
