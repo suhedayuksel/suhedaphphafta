@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 11 May 2022, 18:34:50
+-- Üretim Zamanı: 13 May 2022, 18:22:01
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.3.21
 
@@ -256,6 +256,55 @@ CREATE TABLE IF NOT EXISTS `ornek` (
 INSERT INTO `ornek` (`id`, `ad`, `yas`, `il`) VALUES
 (6, 'Kaan', 40, 'İstanbul'),
 (8, 'Hayko', 40, 'İstanbul');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `ozellikler`
+--
+
+DROP TABLE IF EXISTS `ozellikler`;
+CREATE TABLE IF NOT EXISTS `ozellikler` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ikon` varchar(50) NOT NULL,
+  `ozbaslik` varchar(100) NOT NULL,
+  `ozacıklama` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `ozellikler`
+--
+
+INSERT INTO `ozellikler` (`id`, `ikon`, `ozbaslik`, `ozacıklama`) VALUES
+(3, '<i class=\"bi bi-balloon-heart-fill\"></i>', 'balon kalp', 'tatlı balon kalp'),
+(2, '<i class=\"bi bi-arrow-through-heart-fill\"></i>', 'kalp', 'tatlı kalp'),
+(4, '<i class=\"bi bi-bandaid-fill\"></i>', 'yara bandı', 'kalp için yara bandı'),
+(5, '<i class=\"bi bi-brightness-low\"></i>', 'yaz', 'summer'),
+(6, '<i class=\"bi bi-bug-fill\"></i>', 'uğur böceği', 'tatlış uğur böceği'),
+(7, '<i class=\"bi bi-balloon-heart-fill\"></i>', 'balon', 'balon kalp');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `ozellikler2`
+--
+
+DROP TABLE IF EXISTS `ozellikler2`;
+CREATE TABLE IF NOT EXISTS `ozellikler2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `baslik` varchar(100) NOT NULL,
+  `altbaslik` varchar(150) NOT NULL,
+  `renk` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `ozellikler2`
+--
+
+INSERT INTO `ozellikler2` (`id`, `baslik`, `altbaslik`, `renk`) VALUES
+(1, 'firmamımızın özellikleri', 'firmamımızın siz değerli müşterilerine sağladığı avantajlar ', '#f8f9fa');
 
 -- --------------------------------------------------------
 

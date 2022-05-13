@@ -87,3 +87,14 @@ font-size: 24px;
 #anaseobasvuru{
     background: radial-gradient(circle, rgba(108,85,249,1) 0%, rgba(117,163,231,1) 50%, rgba(108,85,249,1) 100%);
 }
+#anaozellikler i {
+    font-size: 35px !important;
+    color: #6c55f9;
+}
+.ikonstil{
+    width: 60px;
+    height: 60px;
+    border: 1px solid #efefef;
+    background-color: #fff;
+    border-radius: 120px;
+}

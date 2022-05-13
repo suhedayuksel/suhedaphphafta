@@ -103,7 +103,7 @@ $satir_hakkimda = $sorgu_hakkimda->fetch();
 <!-- hakkımda section end -->
 
 <!--özellikler section start  -->
-<section id="anaozellikler">
+<section id="anaozellikler" class="py-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -112,10 +112,26 @@ $satir_hakkimda = $sorgu_hakkimda->fetch();
             </div>
         </div>
         <div class="row">
+            <?php 
+            $sorgu_ozellik =  $db ->prepare('select * from ozellikler order by ozbaslik asc');
+            $sorgu_ozellik -> execute();
+            if($sorgu_ozellik -> rowCount()){
+                foreach($sorgu_ozellik as $satir_ozellik){
+                    ?>
+                    <div class="col-md-4 mt-4 text-center">
+                      <div class="ikonstil text-center mx-auto"><?php  echo $satir_ozellik['ikon']; ?></div>  
+                      <?php echo $satir_ozellik['ozbaslik'];?> <br>
+                    <?php echo $satir_ozellik['ozacıklama'];?>
+                    </div>
+                    <?php
+
+
+                }
+            }
+            
+            ?>
             <div class="col-md-4">
-                ikon gelecek <br>
-                başlık gelecek <br>
-                kısa yazı gelecek
+             
             </div>
         </div>
     </div>
